@@ -2,7 +2,7 @@
 
 def gitbranch = env.BRANCH_NAME
 
-ojtMaeeNavarroPipeline(
+ojtMaeNavarroPipeline(
     gitbranch: gitbranch,
     project_name: "ojt-maenavarro-full-stack-fastapi"
 )
