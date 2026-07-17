@@ -11,15 +11,15 @@ WORKDIR /app
 
 ENV PATH="/app/.venv/bin:$PATH"
 
-COPY ./backend/pyproject.toml ./backend/uv.lock /app/
+COPY pyproject.toml uv.lock /app/
 
 RUN uv sync --frozen --no-install-workspace --package app
 
-COPY ./backend/scripts /app/backend/scripts
+COPY backend/scripts /app/backend/scripts
 
-COPY ./backend/pyproject.toml ./backend/alembic.ini /app/backend/
+COPY backend/pyproject.toml backend/alembic.ini /app/backend/
 
-COPY ./backend/app /app/backend/app
+COPY backend/app /app/backend/app
 
 RUN uv sync --frozen --package app
 
